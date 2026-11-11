@@ -1,0 +1,6 @@
+# Bundle patch for dsh-file-reveal.
+# Inserts the plugin row into the profile composition; the row loads the trivial
+# Host half from lib/index.js and the browser half from lib/client.js.
+- insert:
+    - id: dsh-file-reveal
+      name: dsh-file-reveal

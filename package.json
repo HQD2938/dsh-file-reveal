@@ -1,0 +1,55 @@
+{
+  "name": "dsh-file-reveal",
+  "version": "0.1.0",
+  "description": "Click a file path in the DSH conversation to reveal it in the OS file manager (Explorer/Finder), or Alt+click to open it with the default app.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/parse.test.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "file",
+    "reveal",
+    "explorer",
+    "finder",
+    "file-manager"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-gateway",
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-session"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HQD2938/dsh-file-reveal.git"
+  },
+  "homepage": "https://github.com/HQD2938/dsh-file-reveal#readme",
+  "bugs": {
+    "url": "https://github.com/HQD2938/dsh-file-reveal/issues"
+  },
+  "license": "MIT"
+}
